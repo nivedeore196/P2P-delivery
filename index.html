@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Page Settings -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CarryIt - Get Anything Delivered Nearby</title>
+
+  <!-- Font (Google) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Styles -->
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #fff8f0;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    /* Container */
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* Title */
+    h1 {
+      font-size: 36px;
+      color: #ff6b35;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    /* Description */
+    p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      font-size: 18px;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      margin: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 10;
+    }
+    .btn-primary {
+      background: #ff6b35;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #e55a2d;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: #555;
+      color: white;
+    }
+    .btn-secondary:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    /* Steps Section */
+    .steps {
+      margin: 60px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .step {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 350px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
+    }
+    .step:hover {
+      transform: translateY(-5px);
+    }
+    .step h3 {
+      color: #ff6b35;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    /* Examples */
+    .example {
+      margin-top: 50px;
+      font-style: italic;
+      color: #777;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* Scroll Hint */
+    .scroll-hint {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #ff6b35;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .scroll-hint:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 70px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      h1 { font-size: 32px; }
+      .btn { padding: 12px 24px; font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Main Title -->
+    <h1>CarryIt</h1>
+    <p>Get anything delivered by people already going your way — fast, cheap, and easy!</p>
+
+    <!-- Action Buttons -->
+    <a href="login.html" class="btn btn-primary">Get Started</a>
+    <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
+
+    <!-- How It Works Section -->
+    <div id="how-it-works" class="steps">
+      <div class="step">
+        <h3>1. Post a Task</h3>
+        <p>Say what you need, from where to where, and how much you’ll pay.</p>
+      </div>
+      <div class="step">
+        <h3>2. Someone Nearby Accepts</h3>
+        <p>People going that way pick it up and bring it to you.</p>
+      </div>
+      <div class="step">
+        <h3>3. Get It Delivered</h3>
+        <p>Pay safely in-app. Rate. Done!</p>
+      </div>
+    </div>
+
+    <!-- Real-Life Examples -->
+    <div class="example">
+      <p>"Got my book from stationary in 10 mins!" – <strong>Priya, DU</strong></p>
+      <p>"Earned ₹150 bringing onions on my way home" – <strong>Rohan</strong></p>
+    </div>
+
+    <!-- Scroll Hint -->
+    <a href="#how-it-works" class="scroll-hint">↓ See how it works</a>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 CarryIt • Made in India
+    </footer>
+  </div>
+
+</body>
+</html>
