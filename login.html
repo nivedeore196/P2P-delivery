@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarryIt - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff8f0; /* Light orange like home page */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+    }
+    h1 {
+      color: #ff6b35;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #666;
+      margin-bottom: 30px;
+    }
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    input:focus {
+      border-color: #ff6b35;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #ff6b35;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+    button:hover {
+      background: #e55a2d;
+    }
+    .otp-section {
+      display: none;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    .back-link {
+      color: #ff6b35;
+      text-decoration: none;
+      font-size: 14px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h1>CarryIt</h1>
+    <p>Enter your phone to login</p>
+
+    <!-- Phone Input -->
+    <div id="phone-section">
+      <input type="tel" id="phone" placeholder="e.g., 1234567890" maxlength="10">
+      <button onclick="sendOtp()">Send OTP</button>
+    </div>
+
+    <!-- OTP Input -->
+    <div id="otp-section" class="otp-section">
+      <p>OTP sent to <span id="show-phone"></span></p>
+      <input type="text" id="otp" placeholder="Enter 4-digit OTP" maxlength="4">
+      <div id="error" class="error"></div>
+      <button onclick="checkOtp()">Login</button>
+      <a href="#" class="back-link" onclick="backToPhone()">Change Number</a>
+    </div>
+  </div>
+
+  <script>
+    function sendOtp() {
+      const phone = document.getElementById('phone').value;
+      if (phone.length !== 10 || !/^\d+$/.test(phone)) {
+        alert('Please enter a valid 10-digit phone number');
+        return;
+      }
+      document.getElementById('phone-section').style.display = 'none';
+      document.getElementById('otp-section').style.display = 'block';
+      document.getElementById('show-phone').textContent = phone;
+      alert('OTP sent! For testing, use: 1234');
+    }
+
+    function checkOtp() {
+      const otp = document.getElementById('otp').value;
+      const errorDiv = document.getElementById('error');
+      if (otp === '1234') {
+        const name = prompt('Welcome! What should we call you? (e.g., Priya)');
+        if (name) {
+          localStorage.setItem('userName', name.trim() || 'User');
+          localStorage.setItem('userPhone', document.getElementById('phone').value);
+          window.location.href = 'dashboard.html';
+        }
+      } else {
+        errorDiv.textContent = 'Wrong OTP! Try 1234';
+      }
+    }
+
+    function backToPhone() {
+      document.getElementById('otp-section').style.display = 'none';
+      document.getElementById('phone-section').style.display = 'block';
+      document.getElementById('error').textContent = '';
+    }
+  </script>
+
+</body>
+</html>
